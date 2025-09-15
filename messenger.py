@@ -1,13 +1,12 @@
 import os
-
+def clearing():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 #выбор: Вход или регистрация
 cycle = True
 while cycle == True:
-    def clearing():
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
 
     print("Log in or Registration? ")
     
@@ -22,7 +21,7 @@ while cycle == True:
         password = input("Password: ")
         
         clearing()
-          
+            
         print(f"Login: {login} \nPassword: {password} \nRight?")
         answer = input("").strip().lower() 
         
@@ -68,7 +67,10 @@ while cycle == True:
         
         choose = input("Your choice: ").strip()
         
-        clearing()  
+        clearing()
+        
+        if choose == "0":
+            break  
             
         elif choose == "1":
             user_nickname = input("Write your new nickname: ")

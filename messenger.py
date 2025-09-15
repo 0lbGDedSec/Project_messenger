@@ -3,36 +3,32 @@ import os
 #выбор: Вход или регистрация
 cycle = True
 while cycle == True:
+    def clearing():
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            os.system('clear')
 
     print("Log in or Registration? ")
     
     #ввод ответа и возможный выбор
     statusIn_1 = input("").strip()  
     
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
+    clearing()
     
     #после выбора
     if statusIn_1.lower() in ["log in", "login"]: 
         login = input("Login: ")
         password = input("Password: ")
         
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
-            
+        clearing()
+          
         print(f"Login: {login} \nPassword: {password} \nRight?")
         answer = input("").strip().lower() 
         
         if answer == "yes":  
             print("Log in completed.")
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
         else:
             print("Login cancelled.")
             continue  
@@ -42,10 +38,7 @@ while cycle == True:
         new_password = input("Create Password: ")
         new_password_repeat = input("Repeat Password: ")
         
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+        clearing()
             
         if new_password_repeat != new_password:
             print("Wrong password. Repeat again.")
@@ -53,10 +46,7 @@ while cycle == True:
             
         print(f"Login: {new_login} \nPassword: {new_password} \nAlways remember your password!")
         input("Press Enter to continue...")
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+        clearing()
             
     else:  
         print("Invalid choice! Please enter 'Log in' or 'Registration'")
@@ -71,65 +61,41 @@ while cycle == True:
     user_mail = None
     
     while about == "yes":  
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+        clearing()
             
         print("What do you want to add? ")
         print("0. Exit \n1. Nickname \n2. About me \n3. Number of phone \n4. Your mail \n5. View my information")
         
         choose = input("Your choice: ").strip()
         
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
-        
-        if choose == "0":
-            break  
+        clearing()  
             
         elif choose == "1":
             user_nickname = input("Write your new nickname: ")
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
             print(f"Your new nickname: {user_nickname}")
             input("Press Enter to continue...")
             
         elif choose == "2":
             user_about = input("Write about yourself: ")
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
             print(f"About you: {user_about}")
             input("Press Enter to continue...")
             
         elif choose == "3":
             user_phone = input("Write your phone number: ")
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
             print(f"Your phone: {user_phone}")
             input("Press Enter to continue...")
             
         elif choose == "4":
             user_mail = input("Write your email: ")
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
             print(f"Your email: {user_mail}")
             input("Press Enter to continue...")
             
         elif choose == "5":
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            clearing()
             print("=== YOUR INFORMATION ===")
             print(f"Nickname: {user_nickname if user_nickname else 'Not set'}")
             print(f"About: {user_about if user_about else 'Not set'}")
@@ -146,9 +112,6 @@ while cycle == True:
     if exit_choice == "yes":
         cycle = False
     else:
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+        clearing()
             
             #сделать очистку строк через создание функции def
